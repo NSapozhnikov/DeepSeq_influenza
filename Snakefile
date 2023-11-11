@@ -14,7 +14,7 @@ URL_seq = 'http://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/001/SRR1705851/SRR1705851.
 
 rule all:
     input:
-        os.path.join('data', 'SRR1705851_ref.SRR1705851_seqs.sorted.bam')
+        os.path.join('data', 'SRR1705851_ref.SRR1705851_seqs.sorted.indexed.bam.bai')
 
 
 rule get_seqs:
@@ -70,3 +70,14 @@ rule bam_sort:
     threads: 12
     shell:
         'samtools sort --threads {threads} {input} > {output}'
+
+
+rule index_sorted_bam:
+    input:
+        rules.bam_sort.output
+    output:
+        protected(os.path.join('data', '{reference}.{seqs}.sorted.indexed.bam.bai'))
+    threads: 12
+    shell:
+        'samtools index {input} {output} -@ {threads}'
+
