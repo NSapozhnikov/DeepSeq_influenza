@@ -1,0 +1,78 @@
+% Adapted from an original template by Hlyni Arnórssyni, Reykjavik University, Iceland
+
+\documentclass{scrartcl}
+\input{File_Setup.tex}
+\usepackage{listings}
+\usepackage{lmodern}  % for bold teletype font
+\usepackage{amsmath}  % for \hookrightarrow
+\usepackage{xcolor}   % for \textcolor
+\usepackage{caption}
+\usepackage{subcaption}
+\bibliographystyle{ieeetr}
+
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true
+}
+
+\begin{document}
+%Title of the report, name of coworkers (of experiment and of report).
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.6\textwidth]{Graphics/BI_logo.png}\par
+	\vspace{5cm}
+
+	{\scshape\huge Rare variant identification with the help of deep sequencing. \par} 
+	\vspace{1cm}
+	{\Large \today\par}
+	\vfill
+	
+	%%%% PROJECT TITLE
+	{\huge\bfseries Homework number 3\par}
+	\vfill
+	
+	%%%% AUTHOR(S)
+	{\Large\itshape by Sapozhnikov N.A.}\par
+	\vspace{1.5cm}
+
+	\vfill
+
+
+	\vfill
+% Bottom of the page
+\end{titlepage}
+
+\newpage
+\section{Abstract}
+A scenario where despite receiving the flu vaccine, an individual falls ill with symptoms matching the flu after contacting with unvaccinated person contracts the virus is a quite rare one. To investigate the discrepancy, a hemagglutination inhibition (HI) assay is conducted, revealing a close match between the roommate's virus and the H3N2 strain A/Hong Kong/4801/2014. Suspecting viral quasispecies, the individual opts for a targeted deep sequencing experiment using Illumina single-end sequencing to analyze the hemagglutinin (HA) genes in the viral sample.
+
+\section{Introduction}
+In the dynamic landscape of influenza prevention, breakthrough infections challenge the effectiveness of vaccination strategies. This narrative unfolds with a vaccinated individual experiencing flu-like symptoms post-exposure to an unvaccinated roommate's virus. Utilizing a hemagglutination inhibition (HI) assay, we identify a close match between the roommate's viral strain and H3N2 variant A/Hong Kong/4801/2014, prompting questions about vaccine coverage. To delve deeper into viral dynamics, a targeted deep sequencing analysis of hemagglutinin (HA) genes is initiated using Illumina single-end sequencing. This investigation aims to elucidate the potential role of viral quasispecies in breakthrough infections. Our study contributes to the ongoing discourse on influenza prevention, emphasizing the interplay between vaccination strategies and viral evolution within hosts.
+
+\section{Methods}
+A comprehensive workflow, implemented in the Snakemake framework, was employed to facilitate the analysis of deep sequencing data in this study. The workflow encompassed a series of tools designed for handling high-throughput sequencing information, including BWA (Burrows-Wheeler Aligner) and VarScan.
+The workflow seamlessly integrated BWA and VarScan into a unified analytical framework, streamlining the entire process from read alignment to variant calling.
+The modularity of the pipeline facilitated adaptability for future analyses and extensions.
+By employing this Snakemake-based workflow, coupled with tools such as BWA and VarScan, we aimed to conduct a thorough and systematic analysis of deep sequencing data, unraveling the genomic dynamics underlying the breakthrough influenza infection.
+
+\section{Results}
+Results text
+
+\section{Discussion}
+Discussion text
+
+\newpage
+\section{Bibliography}
+
+\bibliography{references}
+%------ To create Appendix with additional stuff -------%
+%\newpage
+%\appendix
+%\section{Appendix}
+%Put data files, CAD drawings, additional sketches, etc.
+
+\end{document}
+
