@@ -59,10 +59,12 @@ The modularity of the pipeline facilitated adaptability for future analyses and 
 By employing this Snakemake-based workflow, coupled with tools such as BWA and VarScan, we aimed to conduct a thorough and systematic analysis of deep sequencing data, unraveling the genomic dynamics underlying the breakthrough influenza infection.
 
 \section{Results}
-Results text
+Two variants 1458 T -> C	and 307 C -> T were found with frequencies 0.94 and 0.84. Among all mutations, the one on position 307 was non-synonymous. This mutation affects the epitope region D in the hemagglutinin protein as has been reported in another work \cite{munoz_epitope_2005}.
 
 \section{Discussion}
-Discussion text
+To further enhance the accuracy of identifying and quantifying rare variants in deep sequencing experiments, one additional approach to control for error involves the incorporation of Unique Molecular Identifiers (UMIs). UMIs are short sequences that are ligated to individual DNA or RNA molecules before the PCR amplification step. By assigning a unique identifier to each original template molecule, UMIs enable the distinction between PCR duplicates and true biological variants. This approach helps mitigate errors introduced during PCR amplification, a critical step in the sequencing process \cite{smith_umi-tools_2017}.
+
+The implementation of UMIs provides several advantages in error control. Firstly, it allows for the identification and removal of PCR duplicates, which are a common source of artifacts in deep sequencing data. Additionally, UMIs assist in the accurate quantification of rare variants by reducing the impact of PCR bias, ensuring a more faithful representation of the true viral population. By incorporating UMIs into our experimental workflow, we can significantly enhance the precision and reliability of variant calling, particularly for low-frequency variants.
 
 \newpage
 \section{Bibliography}

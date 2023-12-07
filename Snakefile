@@ -9,7 +9,7 @@ Steps:
 import os
 
 
-sample_ids = ['SRR1705858', 'SRR1705859', 'SRR1705860']
+sample_ids = ['SRR1705851', 'SRR1705858', 'SRR1705859', 'SRR1705860']
 
 rule all:
     input:
@@ -19,6 +19,13 @@ rule all:
         expand(os.path.join('data', 'SRR1705851_ref.fasta.pac'), sample=sample_ids),
         expand(os.path.join('data', 'SRR1705851_ref.fasta.sa'), sample=sample_ids),
         expand(os.path.join('data', 'SRR1705851_ref.{sample}.varscan_results.vcf'), sample=sample_ids)
+
+
+# rule get_roommate_data:
+#     output: 
+#         os.path.join('data', '{sample}_seqs.fastq.gz')
+#     shell:
+#         'wget -O {output} http://ftp.sra.ebi.ac.uk/vol1/fastq/SRR170/001/SRR1705851/'
 
 
 rule get_seqs:
